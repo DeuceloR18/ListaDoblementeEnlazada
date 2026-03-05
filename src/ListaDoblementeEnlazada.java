@@ -47,4 +47,26 @@ public class ListaDoblementeEnlazada {
     }
 
 
+    //Metodos para recorrer la lista hacia adelante
+    public void recorrerAdelante() {
+        Nodo actual = cabeza;
+
+        while (actual != null) {
+            System.out.print(actual.dato + " -> ");
+            actual = actual.siguiente;
+        }
+
+        System.out.println("null");
+    }
+
+    //Recorrer la lista hacia atras
+    public void recorrerAtras() {
+        Nodo actual = cola;
+        while (actual != null) {
+            System.out.print(actual.dato + " -> ");
+            actual = actual.anterior;
+
+        }
+        System.out.println("null");
+    }
 }
