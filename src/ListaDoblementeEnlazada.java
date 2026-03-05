@@ -32,6 +32,7 @@ public class ListaDoblementeEnlazada {
 
         tamaño++;
     }
+
     public void insertarFinal(int dato) {
         Nodo nuevo = new Nodo(dato);
         if (estaVacia()) {
@@ -71,7 +72,6 @@ public class ListaDoblementeEnlazada {
     }
 
 
-
     //metodos por busqueda
     public boolean buscarValor(int valor) {
         Nodo actual = cabeza;
@@ -87,7 +87,8 @@ public class ListaDoblementeEnlazada {
 
         return false;
     }
-//buscar por indice
+
+    //buscar por indice
     public int buscarIndice(int indice) {
         Nodo actual = cabeza;
         int contador = 0;
@@ -101,4 +102,32 @@ public class ListaDoblementeEnlazada {
         return -1;
     }
 
+    //metodo para borrar elemento de la lista}
+    public void borrar(int valor) {
+
+        Nodo actual = cabeza;
+
+        while (actual != null) {
+
+            if (actual.dato == valor) {
+
+                if (actual.anterior != null) {
+                    actual.anterior.siguiente = actual.siguiente;
+                } else {
+                    cabeza = actual.siguiente;
+                }
+
+                if (actual.siguiente != null) {
+                    actual.siguiente.anterior = actual.anterior;
+                } else {
+                    cola = actual.anterior;
+                }
+
+                tamaño--;
+                return;
+            }
+
+            actual = actual.siguiente;
+        }
+    }
 }
