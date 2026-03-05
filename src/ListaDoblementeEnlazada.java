@@ -69,4 +69,36 @@ public class ListaDoblementeEnlazada {
         }
         System.out.println("null");
     }
+
+
+
+    //metodos por busqueda
+    public boolean buscarValor(int valor) {
+        Nodo actual = cabeza;
+
+        while (actual != null) {
+
+            if (actual.dato == valor) {
+                return true;
+            }
+
+            actual = actual.siguiente;
+        }
+
+        return false;
+    }
+//buscar por indice
+    public int buscarIndice(int indice) {
+        Nodo actual = cabeza;
+        int contador = 0;
+        while (actual != null) {
+            if (actual.dato == indice) {
+                return actual.dato;
+            }
+            contador++;
+            actual = actual.siguiente;
+        }
+        return -1;
+    }
+
 }
