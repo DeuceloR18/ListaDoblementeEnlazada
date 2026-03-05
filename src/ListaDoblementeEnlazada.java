@@ -17,4 +17,34 @@ public class ListaDoblementeEnlazada {
         return tamaño;
     }
 
+    //insert to initio and finish
+    public void insertarInicio(int dato) {
+
+        Nodo nuevo = new Nodo(dato);
+
+        if (estaVacia()) {
+            cabeza = cola = nuevo;
+        } else {
+            nuevo.siguiente = cabeza;
+            cabeza.anterior = nuevo;
+            cabeza = nuevo;
+        }
+
+        tamaño++;
+    }
+    public void insertarFinal(int dato) {
+        Nodo nuevo = new Nodo(dato);
+        if (estaVacia()) {
+            cabeza = cola = nuevo;
+
+        } else {
+            cola.siguiente = nuevo;
+            nuevo.anterior = cola;
+            cola = nuevo;
+
+        }
+        tamaño++;
+    }
+
+
 }
